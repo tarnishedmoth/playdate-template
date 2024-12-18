@@ -1,14 +1,46 @@
-import "CoreLibs/object"
-import "CoreLibs/graphics"
-import "CoreLibs/sprites"
-import "CoreLibs/timer"
+-- Example main.lua file
+-- =====================
 
+-- Importing libraries used for drawCircleAtPoint and crankIndicator
+import "CoreLibs/graphics"
+import "CoreLibs/ui"
+
+-- Localizing commonly used globals
 local pd <const> = playdate
 local gfx <const> = playdate.graphics
 
-function pd.update()
-    gfx.sprite.update()
-    pd.timer.updateTimers()
+-- Defining player variables
+local playerSize = 10
+local playerVelocity = 3
+local playerX, playerY = 200, 120
 
-    gfx.drawCircleAtPoint(200, 120, 30)
+-- Defining helper function
+local function ring(value, min, max)
+	if (min > max) then
+		min, max = max, min
+	end
+	return min + (value - min) % (max - min)
+end
+
+-- Update function is required in every project!
+function pd.update()
+    -- Clear screen
+    gfx.clear()
+    -- Draw crank indicator if crank is docked
+    if pd.isCrankDocked() then
+        pd.ui.crankIndicator:draw()
+    else
+        -- Calculate velocity from crank angle 
+        local crankPosition = pd.getCrankPosition() - 90
+        local xVelocity = math.cos(math.rad(crankPosition)) * playerVelocity
+        local yVelocity = math.sin(math.rad(crankPosition)) * playerVelocity
+        -- Move player
+        playerX += xVelocity
+        playerY += yVelocity
+        -- Loop player position
+        playerX = ring(playerX, -playerSize, 400 + playerSize)
+        playerY = ring(playerY, -playerSize, 240 + playerSize)
+    end
+    -- Draw player
+    gfx.drawCircleAtPoint(playerX, playerY, playerSize)
 end
