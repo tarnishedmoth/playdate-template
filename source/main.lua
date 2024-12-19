@@ -1,5 +1,8 @@
--- Example main.lua file
--- =====================
+-- Below is a small example program where you can move a circle
+-- around with the crank. You can delete everything in this file,
+-- but make sure to add back in a playdate.update function since
+-- one is required for every Playdate game!
+-- =============================================================
 
 -- Importing libraries used for drawCircleAtPoint and crankIndicator
 import "CoreLibs/graphics"
@@ -22,8 +25,8 @@ local function ring(value, min, max)
 	return min + (value - min) % (max - min)
 end
 
--- Update function is required in every project!
-function pd.update()
+-- playdate.update function is required in every project!
+function playdate.update()
     -- Clear screen
     gfx.clear()
     -- Draw crank indicator if crank is docked
