@@ -35,9 +35,13 @@ This template includes a copy of [playdate-luacats](https://github.com/notpeter/
 # Troubleshooting
 - If you opened VSCode before you set your environment variable, VSCode hasn't picked up on the new environment variable yet - first try closing and reopening VSCode
 - `Task configuration failed: Could not read Playdate SDK version at <path>`
-  - Likely that the path to Playdate SDK folder set in your `PLAYDATE_SDK_PATH` is incorrect - try setting it again
+  - Likely that the path to Playdate SDK folder set in your `PLAYDATE_SDK_PATH` is incorrect - double-check the path to your Playdate SDK (by default, it's at `C:\Users\<Username>\Documents\PlaydateSDK` for Windows) and try setting it again
 - `Task configuration failed: Could not find the Playdate SDK. Please ensure that the PlaydateSDK is installed and the PLAYDATE_SDK_PATH environment variable is set`
   - Likely that your `PLAYDATE_SDK_PATH` environment variable was not set correctly. Try setting it again, or look up how to set environment variables another way ("set environment variable windows" or "set permanent environment variable [Linux distro]")
+- `No build task to run found` when trying to run the build task
+  - Likely that you've opened the wrong folder - the folder should be the one containing the `.vscode`, `builds`, and `source` folders, not a parent to that folder
+- Seeing system "Settings" page instead of demo app
+  - Sometimes happens when running the first time when there's no configuration folder - closing the Simulator and building again should solve the issue most of the time
 
 # Debugging
 1. Set breakpoints in your `.lua` files by clicking to the left of the line number
