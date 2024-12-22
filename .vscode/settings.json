@@ -1,3 +1,4 @@
+// Workspace settings - documentation can be found at: https://code.visualstudio.com/docs/getstarted/settings
 {
     // ====== Lua Settings ======
     // The Playdate Lua runtime uses "import" instead of "require"

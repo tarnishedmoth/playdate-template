@@ -1,3 +1,4 @@
+// Build tasks - documentation can be found at: https://code.visualstudio.com/docs/editor/tasks
 {
     "version": "2.0.0",
     "tasks": [
@@ -12,7 +13,7 @@
                 "revealProblems": "onProblem",
                 // Share same terminal window as other tasks
                 "panel": "shared",
-                // Don't show "Terminal will be reused by tasks, press any key to close it" message.
+                // Don't show "Terminal will be reused by tasks, press any key to close it" message
                 "showReuseMessage": false
             }
         },
@@ -30,7 +31,7 @@
                 "revealProblems": "onProblem",
                 // Share same terminal window as other tasks
                 "panel": "shared",
-                // Don't show "Terminal will be reused by tasks, press any key to close it" message.
+                // Don't show "Terminal will be reused by tasks, press any key to close it" message
                 "showReuseMessage": false
             }
         },
