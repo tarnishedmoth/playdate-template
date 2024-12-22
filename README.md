@@ -33,6 +33,7 @@ This template includes a copy of [playdate-luacats](https://github.com/notpeter/
 9. You can delete this `README.md` file and the `.txt` file in the `builds` folder
 
 # Troubleshooting
+- If you opened VSCode before you set your environment variable, VSCode hasn't picked up on the new environment variable yet - first try closing and reopening VSCode
 - `Task configuration failed: Could not read Playdate SDK version at <path>`
   - Likely that the path to Playdate SDK folder set in your `PLAYDATE_SDK_PATH` is incorrect - try setting it again
 - `Task configuration failed: Could not find the Playdate SDK. Please ensure that the PlaydateSDK is installed and the PLAYDATE_SDK_PATH environment variable is set`
