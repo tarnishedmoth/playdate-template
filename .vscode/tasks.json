@@ -25,7 +25,6 @@
             "problemMatcher": ["$pdc-external"],
             // Close any existing simulator windows before launching a new one
             "kill": true,
-            // Don't show the terminal window unless there is an error
             "presentation": {
                 // Switch to problems tab on error
                 "revealProblems": "onProblem",
