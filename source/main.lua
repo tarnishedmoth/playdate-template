@@ -17,6 +17,28 @@ local playerSize = 10
 local playerVelocity = 3
 local playerX, playerY = 200, 120
 
+-- Drawing player image
+local playerImage = gfx.image.new(32, 32)
+gfx.pushContext(playerImage)
+    -- Draw outline
+    gfx.drawRoundRect(4, 3, 24, 26, 1)
+    -- Draw screen
+    gfx.drawRect(7, 6, 18, 12)
+    -- Draw eyes
+    gfx.drawLine(10, 12, 12, 10)
+    gfx.drawLine(12, 10, 14, 12)
+    gfx.drawLine(17, 12, 19, 10)
+    gfx.drawLine(19, 10, 21, 12)
+    -- Draw crank
+    gfx.drawRect(27, 15, 3, 9)
+    -- Draw A/B buttons
+    gfx.drawCircleInRect(16, 20, 4, 4)
+    gfx.drawCircleInRect(21, 20, 4, 4)
+    -- Draw D-Pad
+    gfx.drawRect(8, 22, 6, 2)
+    gfx.drawRect(10, 20, 2, 6)
+gfx.popContext()
+
 -- Defining helper function
 local function ring(value, min, max)
 	if (min > max) then
@@ -45,5 +67,5 @@ function playdate.update()
         playerY = ring(playerY, -playerSize, 240 + playerSize)
     end
     -- Draw player
-    gfx.drawCircleAtPoint(playerX, playerY, playerSize)
+    playerImage:drawAnchored(playerX, playerY, 0.5, 0.5)
 end
