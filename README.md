@@ -25,14 +25,17 @@ This template includes a copy of [playdate-luacats](https://github.com/notpeter/
      - If you installed the Playdate SDK at a different path, change the `$env:USERPROFILE\Documents\PlaydateSDK` part of the command to where you installed it
      - To check if it worked correctly, close and reopen Powershell, type `$env:PLAYDATE_SDK_PATH`, and press enter. It should print the path to your `PlaydateSDK` folder
    - **Linux**
-     - In a terminal window, type `nano ~/.bashrc` (or `.zshrc` if your distro uses zsh instead of bash) to open your `.bashrc` file located in your Home directory
+     - In a terminal window, type the following command to open your `.bashrc` file located in your Home directory using the nano text editor (replace `.bashrc` with `.zshrc` if your distro uses zsh instead of bash) 
+       ```
+       nano ~/.bashrc
+       ```
      - Scroll to the bottom of the file and copy and paste the following command (if you put your folder in a different location, change `$HOME/Documents/PlaydateSDK` to the path of your `PlaydateSDK` folder)
      
        ```sh
        export PLAYDATE_SDK_PATH=$HOME/Documents/PlaydateSDK
        ```
      - Press `Ctrl + X` to exit, `Y` to save, and then `Enter` to confirm the file name
-     - If `nano` is not installed, you can manually edit your `.bashrc` file which you can find by navigating to your Home folder (make sure hidden files are shown) 
+     - If `nano` is not installed, you can manually edit/create your `.bashrc` file which you can find by navigating to your Home folder (make sure hidden files are shown) 
 4. Download this template - to do so, press the big green `<> Code` button at the top of the Github page, click "Download ZIP", and unzip the file (alternatively, if you have git installed, you can just clone the repository)
 5. Open the downloaded template folder in VSCode by first launching VSCode, and then going to `File -> Open Folder` at the top left of your VSCode window
    - Make sure you're opening the folder than contains the `.vscode` folder directly, *not* the folder containing that folder, as some unzipping utilities automatically create an extra parent folder
