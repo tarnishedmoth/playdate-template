@@ -55,6 +55,8 @@ This template includes a copy of [playdate-luacats](https://github.com/notpeter/
   - Likely that your `PLAYDATE_SDK_PATH` environment variable was not set correctly. Try setting it again, or look up how to set environment variables another way ("set environment variable windows" or "set permanent environment variable [Linux distro]")
 - `No build task to run found` when trying to run the build task
   - Likely that you've opened the wrong folder - the folder should be the one containing the `.vscode`, `builds`, and `source` folders, not a parent to that folder
+- `SDK Path Not Set` error on simulator
+   - Your SDK installation might be on a different drive than your project. If your SDK was installed on your D:/ drive and your project is in your C:/ drive, try re-installing the SDK on your C:/ drive instead.
 - Seeing system "Settings" page instead of demo app
   - Sometimes happens when running the first time when there's no configuration folder - closing the Simulator and building again should solve the issue most of the time
 - `Task configuration failed` on Linux
