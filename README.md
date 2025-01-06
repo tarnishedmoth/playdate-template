@@ -50,9 +50,13 @@ This template includes a copy of [playdate-luacats](https://github.com/notpeter/
 # Troubleshooting
 - If you opened VSCode before you set your environment variable, VSCode hasn't picked up on the new environment variable yet - first try closing and reopening VSCode
 - `Task configuration failed: Could not read Playdate SDK version at <path>`
-  - Likely that the path to Playdate SDK folder set in your `PLAYDATE_SDK_PATH` is incorrect - double-check the path to your Playdate SDK and if it exists (by default, it's at `C:\Users\<Username>\Documents\PlaydateSDK` for Windows) and try setting it again
+  - This means that the PlaydateSDK folder was not found at the path that you set your `PLAYDATE_SDK_PATH` environment variable to. It likely means that your PlaydateSDK folder was not installed in the default documents folder (`C:\Users\<Username>\Documents\PlaydateSDK` for Windows). Double-check your Documents folder and look for a `PlaydateSDK` folder. If it's there, try setting it again. Otherwise, it got installed somewhere else, so you'll need to set the environment variable to that path, or reinstall the SDK at your normal documents folder
+  - Sometimes, for Windows, your PlaydateSDK gets installed in the OneDrive documents folder instead by default. In that case, you'll need to change the environment variable path to your OneDrive path instead (something like `"C:\Users\<Username>\OneDrive\Documents\PlaydateSDK"`), or reinstall the Playdate SDK in your normal documents folder
+  - Another possible Windows issue is the Playdate SDK gets installed on another drive (e.g. `D:\`, `E:\`, etc.)
+  - If you set a custom path, it's possible that you made a typo when setting your environment variable path - try setting it again
+  - After every change to your environment variable, you'll need to close and re-open VSCode for it to pickup the change
 - `Task configuration failed: Could not find the Playdate SDK. Please ensure that the PlaydateSDK is installed and the PLAYDATE_SDK_PATH environment variable is set`
-  - Likely that your `PLAYDATE_SDK_PATH` environment variable was not set correctly. Try setting it again, or look up how to set environment variables another way ("set environment variable windows" or "set permanent environment variable [Linux distro]")
+  - This means that your `PLAYDATE_SDK_PATH` environment variable does not exist. Try setting it again, or look up how to set environment variables another way ("set environment variable windows" or "set permanent environment variable [Linux distro]")
 - `No build task to run found` when trying to run the build task
   - Likely that you've opened the wrong folder - the folder should be the one containing the `.vscode`, `builds`, and `source` folders, not a parent to that folder
 - `SDK Path Not Set` error on simulator
