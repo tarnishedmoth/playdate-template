@@ -4,6 +4,8 @@
 # Playdate Template
 This template will help you set up everything you need to start making a game for the Playdate. We will be creating a development environment to make a Playdate game in Lua using Visual Studio Code. Sets up automated builds, autocomplete, and debugging. Works for Windows, Mac, and Linux.
 
+You can find a video tutorial on how to use this template and make your first Playdate game here: https://youtu.be/UZ04rk3lLqU
+
 This template includes a copy of [playdate-luacats](https://github.com/notpeter/playdate-luacats) by notpeter, licensed under the MIT license.
 
 # Setup
