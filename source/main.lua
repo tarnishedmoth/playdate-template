@@ -5,10 +5,10 @@ local gfx = pd.graphics
 
 local playerX = 40
 local playerY = 120
-local playerImage = gfx.image.new("images/shadedball.png")
+local carImage = gfx.image.new("images/integra.png")
 
 function pd.update()
     -- 30/s (30FPS)
-    playerImage:draw(playerX, playerY)
+    carImage:draw(playerX, playerY)
     
 end
