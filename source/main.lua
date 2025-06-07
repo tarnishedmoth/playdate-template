@@ -13,9 +13,8 @@ local gfx = pd.graphics
 
 local playerX = 40
 local playerY = 120
-local carImage = gfx.image.new("images/integra.png")
 
-game_intro()
+Game_Intro()
 
 Car(playerX, playerY)
 
